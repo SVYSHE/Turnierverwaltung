@@ -11,7 +11,16 @@
         #endregion
         
         #region constructors
-        
+
+        public Handballspieler() : base()
+        {
+            
+        }
+
+        public Handballspieler(string name) : base(name)
+        {
+            
+        }
         #endregion
         
         #region worker

@@ -11,7 +11,16 @@
         #endregion
         
         #region constructors
-        
+
+        public Trainer() : base()
+        {
+            
+        }
+
+        public Trainer(string name) : base(name)
+        {
+            
+        }
         #endregion
         
         #region worker

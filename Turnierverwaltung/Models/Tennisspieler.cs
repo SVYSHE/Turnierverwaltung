@@ -11,7 +11,16 @@
         #endregion
         
         #region constructors
-        
+
+        public Tennisspieler() : base()
+        {
+            
+        }
+
+        public Tennisspieler(string name) : base(name)
+        {
+            
+        }
         #endregion
         
         #region worker

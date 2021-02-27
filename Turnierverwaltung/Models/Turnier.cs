@@ -29,6 +29,17 @@ namespace Turnierverwaltung.Models
 
         #region constructors
 
+        public Turnier()
+        {
+            Teilnehmer = new List<Teilnehmer>();
+            Spiele = new List<Spiel>();
+        }
+
+        public Turnier(List<Teilnehmer> teilnehmer, List<Spiel> spiele)
+        {
+            Teilnehmer = teilnehmer;
+            Spiele = spiele;
+        }
         #endregion
 
         #region worker

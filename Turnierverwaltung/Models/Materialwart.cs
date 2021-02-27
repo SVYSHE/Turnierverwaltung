@@ -11,7 +11,16 @@
         #endregion
         
         #region constructors
-        
+
+        public Materialwart() : base()
+        {
+            
+        }
+
+        public Materialwart(string name) : base()
+        {
+            
+        }
         #endregion
         
         #region worker

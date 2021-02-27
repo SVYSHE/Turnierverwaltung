@@ -11,7 +11,16 @@
         #endregion
         
         #region constructors
-        
+
+        public Physio() : base()
+        {
+            
+        }
+
+        public Physio(string name) : base(name)
+        {
+            
+        }
         #endregion
         
         #region worker

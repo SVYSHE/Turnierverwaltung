@@ -11,7 +11,16 @@
         #endregion
         
         #region constructors
-        
+
+        public Organisator() : base()
+        {
+            
+        }
+
+        public Organisator(string name) : base(name)
+        {
+            
+        }
         #endregion
         
         #region worker

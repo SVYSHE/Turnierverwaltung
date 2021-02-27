@@ -11,7 +11,16 @@
         #endregion
         
         #region constructors
-        
+
+        public Schiedsrichter() : base()
+        {
+            
+        }
+
+        public Schiedsrichter(string name) : base(name)
+        {
+            
+        }
         #endregion
         
         #region worker
