@@ -3,10 +3,18 @@
     public class Organisator : Teilnehmer
     {
         #region properties
+
+        private int _organisatorId;
         
         #endregion
 
         #region accessor/modifier
+
+        public int OrganisatorId
+        {
+            get => _organisatorId;
+            set => _organisatorId = value;
+        }
 
         #endregion
         
@@ -14,12 +22,12 @@
 
         public Organisator()
         {
-            
+            OrganisatorId = 0;
         }
 
-        public Organisator(string name) : base(name)
+        public Organisator(string name, int organisatorId) : base(name)
         {
-            
+            OrganisatorId = organisatorId;
         }
         #endregion
         

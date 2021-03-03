@@ -3,10 +3,18 @@
     public class Schiedsrichter : Teilnehmer
     {
         #region properties
+
+        private int _anzahlSpieleErfahrung;
         
         #endregion
 
         #region accessor/modifier
+
+        public int AnzahlSpieleErfahrung
+        {
+            get => _anzahlSpieleErfahrung;
+            set => _anzahlSpieleErfahrung = value;
+        }
 
         #endregion
         
@@ -14,12 +22,12 @@
 
         public Schiedsrichter()
         {
-            
+            AnzahlSpieleErfahrung = 0;
         }
 
-        public Schiedsrichter(string name) : base(name)
+        public Schiedsrichter(string name, int anzahlSpieleErfahrung) : base(name)
         {
-            
+            AnzahlSpieleErfahrung = anzahlSpieleErfahrung;
         }
         #endregion
         

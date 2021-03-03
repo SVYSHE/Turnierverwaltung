@@ -24,12 +24,12 @@ namespace Turnierverwaltung.Models
 
         public Mannschaft()
         {
-            
+            Mitglieder = new List<Teilnehmer>();
         }
 
-        public Mannschaft(string name) : base(name)
+        public Mannschaft(string name, List<Teilnehmer> mitglieder) : base(name)
         {
-            
+            Mitglieder = mitglieder;
         }
         #endregion
 

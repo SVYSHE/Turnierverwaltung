@@ -3,10 +3,18 @@
     public class Materialwart : Teilnehmer
     {
         #region properties
+
+        private int _id;
         
         #endregion
 
         #region accessor/modifier
+
+        public int Id
+        {
+            get => _id;
+            set => _id = value;
+        }
 
         #endregion
         
@@ -14,12 +22,12 @@
 
         public Materialwart()
         {
-            
+            Id = 0;
         }
 
-        public Materialwart(string name) : base(name)
+        public Materialwart(string name, int id) : base(name)
         {
-            
+            Id = id;
         }
         #endregion
         
