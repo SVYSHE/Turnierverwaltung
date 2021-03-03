@@ -12,7 +12,7 @@
         
         #region constructors
 
-        public Physio() : base()
+        public Physio()
         {
             
         }

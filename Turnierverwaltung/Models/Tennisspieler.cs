@@ -12,7 +12,7 @@
         
         #region constructors
 
-        public Tennisspieler() : base()
+        public Tennisspieler()
         {
             
         }

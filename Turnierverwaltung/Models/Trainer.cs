@@ -12,7 +12,7 @@
         
         #region constructors
 
-        public Trainer() : base()
+        public Trainer()
         {
             
         }

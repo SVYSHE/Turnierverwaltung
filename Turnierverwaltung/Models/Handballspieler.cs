@@ -12,7 +12,7 @@
         
         #region constructors
 
-        public Handballspieler() : base()
+        public Handballspieler()
         {
             
         }

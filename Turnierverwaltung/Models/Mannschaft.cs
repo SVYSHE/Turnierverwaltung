@@ -22,12 +22,12 @@ namespace Turnierverwaltung.Models
 
         #region constructors
 
-        public Mannschaft() : base()
+        public Mannschaft()
         {
             
         }
 
-        public Mannschaft(string name) : base()
+        public Mannschaft(string name) : base(name)
         {
             
         }

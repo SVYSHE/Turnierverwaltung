@@ -12,7 +12,7 @@
         
         #region constructors
 
-        public Schiedsrichter() : base()
+        public Schiedsrichter()
         {
             
         }

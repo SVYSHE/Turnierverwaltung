@@ -12,12 +12,12 @@
         
         #region constructors
 
-        public Spieler() : base()
+        public Spieler()
         {
             
         }
 
-        public Spieler(string name) : base()
+        public Spieler(string name) : base(name)
         {
             
         }

@@ -12,12 +12,12 @@
         
         #region constructors
 
-        public Materialwart() : base()
+        public Materialwart()
         {
             
         }
 
-        public Materialwart(string name) : base()
+        public Materialwart(string name) : base(name)
         {
             
         }

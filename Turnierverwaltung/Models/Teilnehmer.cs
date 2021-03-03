@@ -4,7 +4,7 @@
     {
         #region properties
 
-        protected string _name;
+        private string _name;
 
         #endregion
 
