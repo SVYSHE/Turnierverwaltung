@@ -3,7 +3,7 @@
     public class Teilnehmer
     {
         #region properties
-        // TODO: Teilnehmernummer
+        
         private string _name;
 
         #endregion

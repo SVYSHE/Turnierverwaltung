@@ -1,7 +1,4 @@
-﻿
-
-using System;
-using Turnierverwaltung.Views;
+﻿using Turnierverwaltung.Views;
 
 namespace Turnierverwaltung.Controller
 {
