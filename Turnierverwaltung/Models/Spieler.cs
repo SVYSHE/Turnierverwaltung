@@ -1,4 +1,6 @@
-﻿namespace Turnierverwaltung.Models
+﻿using MySql.Data.MySqlClient;
+
+namespace Turnierverwaltung.Models
 {
     public class Spieler : Teilnehmer
     {
