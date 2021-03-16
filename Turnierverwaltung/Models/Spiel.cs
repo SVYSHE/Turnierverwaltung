@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using MySql.Data.MySqlClient;
+using System.Data.SQLite;
 
 namespace Turnierverwaltung.Models
 {

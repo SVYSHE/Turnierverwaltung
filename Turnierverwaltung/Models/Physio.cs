@@ -1,6 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-
-namespace Turnierverwaltung.Models
+﻿namespace Turnierverwaltung.Models
 {
     public class Physio : Teilnehmer
     {
