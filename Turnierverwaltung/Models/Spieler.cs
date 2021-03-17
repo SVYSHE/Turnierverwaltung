@@ -5,7 +5,7 @@ using System.Data.SQLite;
 
 namespace Turnierverwaltung.Models
 {
-    public class Spieler : Teilnehmer
+    public abstract class Spieler : Teilnehmer
     {
         #region properties
 
@@ -13,6 +13,7 @@ namespace Turnierverwaltung.Models
         private SQLiteConnection _connection;
         private string _connectionString;
         private string _databasePath;
+
         #endregion
 
         #region accessor/modifier
@@ -42,7 +43,7 @@ namespace Turnierverwaltung.Models
         }
 
         #endregion
-        
+
         #region constructors
 
         public Spieler()
@@ -62,30 +63,8 @@ namespace Turnierverwaltung.Models
 
         #region worker
 
-        public int? InsertSpielerIntoDb()
-        {
-            int anzahl = 0;
-            string sqlString = $"insert into spieler (rueckennummer) values('{Id}');";
-            SQLiteCommand command = new SQLiteCommand(sqlString, Connection);
+        public abstract int? InsertIntoDb();
 
-            try
-            {
-                Connection.Open();
-                return command.ExecuteNonQuery();
-            }
-            catch (SQLiteException sqlEx)
-            {
-                return null;
-            }
-            finally
-            {
-                if (Connection.State.Equals(ConnectionState.Open))
-                {
-                    Connection.Close();    
-                }
-                
-            }
-        }
         #endregion
     }
 }

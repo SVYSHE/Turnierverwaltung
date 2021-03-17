@@ -1,6 +1,6 @@
 ﻿namespace Turnierverwaltung.Models
 {
-    public class Teilnehmer
+    public abstract class Teilnehmer
     {
         #region properties
         
@@ -32,7 +32,7 @@
         #endregion
 
         #region worker
-
+        
         #endregion
     }
 }

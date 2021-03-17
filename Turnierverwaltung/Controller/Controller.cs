@@ -70,10 +70,10 @@ namespace Turnierverwaltung.Controller
                 
         }
 
-        public List<Teilnehmer> RetrieveAllTeilnehmerFromDb()
+        public List<Spieler> RetrieveAllTeilnehmerFromDb()
         {
-            List<Teilnehmer> teilnehmerList = new List<Teilnehmer>();
-            string sqlString = "select * from teilnehmer";
+            List<Spieler> teilnehmerList = new List<Spieler>();
+            string sqlString = "select * from spieler";
 
             SQLiteCommand command = new SQLiteCommand(sqlString, Connection);
             try
@@ -85,9 +85,9 @@ namespace Turnierverwaltung.Controller
                 {
                     while (reader.Read())
                     {
-                        string name = reader.GetValue(0).ToString();
-                        Teilnehmer teilnehmer = new Teilnehmer(name);
-                        teilnehmerList.Add(teilnehmer);
+                        int id = reader.GetInt32(0);
+                        string name = reader.GetString(1);
+                        
                     }
                 }
 
