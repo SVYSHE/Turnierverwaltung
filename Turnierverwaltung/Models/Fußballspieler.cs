@@ -27,7 +27,7 @@ namespace Turnierverwaltung.Models
         public override int? InsertIntoDb()
         {
             int anzahl = 0;
-            string sqlString = $"insert into fussballspieler (id, name, rueckennummer) values({Id},{Name},{Rueckennummer});";
+            string sqlString = $"insert into fussballspieler (id, name, rueckennummer) values({Id},'{Name}',{Rueckennummer});";
             SQLiteCommand command = new SQLiteCommand(sqlString, Connection);
 
             try
@@ -37,7 +37,7 @@ namespace Turnierverwaltung.Models
             }
             catch (SQLiteException sqlEx)
             {
-                return null;
+                throw sqlEx;
             }
             finally
             {

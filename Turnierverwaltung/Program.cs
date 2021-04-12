@@ -1,4 +1,5 @@
 ﻿using System;
+using static Turnierverwaltung.Controller.BaseController;
 
 namespace Turnierverwaltung
 {
@@ -6,7 +7,8 @@ namespace Turnierverwaltung
     {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Controller.BaseController baseController = new Controller.BaseController();
+            baseController.Run();
         }
     }
 }

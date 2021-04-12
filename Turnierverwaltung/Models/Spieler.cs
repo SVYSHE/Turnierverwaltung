@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using Turnierverwaltung.Controller;
 
 namespace Turnierverwaltung.Models
 {
@@ -18,6 +19,8 @@ namespace Turnierverwaltung.Models
 
         #region accessor/modifier
 
+        
+        
         public int Id
         {
             get => _id;
@@ -49,7 +52,7 @@ namespace Turnierverwaltung.Models
         public Spieler()
         {
             Id = 0;
-            ConnectionString = "Data Source=" + "/Database/turnierverwaltung.db" + ";Version=3";
+            ConnectionString = $"Data Source={DatabaseController.DATABASE_PATH};Version=3";
             Connection = new SQLiteConnection(ConnectionString);
         }
 

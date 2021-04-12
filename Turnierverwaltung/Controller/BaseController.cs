@@ -7,14 +7,12 @@ using Turnierverwaltung.Views;
 
 namespace Turnierverwaltung.Controller
 {
-    public class Controller
+    public class BaseController
     {
         #region properties
 
         private ConsoleUi _ui;
-        private SQLiteConnection _connection;
-        private string _connectionString;
-        private string _databasePath;
+        private DatabaseController _databaseController;
 
         #endregion
 
@@ -25,40 +23,27 @@ namespace Turnierverwaltung.Controller
             get => _ui;
             set => _ui = value;
         }
-        
-        public SQLiteConnection Connection
-        {
-            get => _connection;
-            set => _connection = value;
-        }
 
-        public string ConnectionString
+        public DatabaseController DatabaseController
         {
-            get => _connectionString;
-            set => _connectionString = value;
-        }
-
-        public string DatabasePath
-        {
-            get => _databasePath;
-            set => _databasePath = value;
+            get => _databaseController;
+            set => _databaseController = value;
         }
 
         #endregion
 
         #region constructors
 
-        public Controller()
+        public BaseController()
         {
             Ui = new ConsoleUi();
-            ConnectionString = "Data Source=/Database/turnierverwaltung.db;Version=3";
-            Connection = new SQLiteConnection(Connection);
+            DatabaseController = new DatabaseController();
         }
 
-        public Controller(ConsoleUi ui, SQLiteConnection connection)
+        public BaseController(ConsoleUi ui, DatabaseController databaseController)
         {
             Ui = ui;
-            Connection = connection;
+            DatabaseController = databaseController;
         }
 
         #endregion
@@ -67,19 +52,30 @@ namespace Turnierverwaltung.Controller
         
         public void Run()
         {
-                
+            try
+            {
+                DatabaseController.CreateDatabaseAndTables();
+                Fußballspieler fb1 = new Fußballspieler(1,"Peter",1,DatabaseController.Connection);
+                fb1.InsertIntoDb();
+                Console.WriteLine("Erfolgreich eingefügt");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
         }
-
+        
         public List<Spieler> RetrieveAllTeilnehmerFromDb()
         {
             List<Spieler> teilnehmerList = new List<Spieler>();
             string sqlString = "select * from spieler";
 
-            SQLiteCommand command = new SQLiteCommand(sqlString, Connection);
+            DatabaseController.Command = new SQLiteCommand(sqlString, DatabaseController.Connection);
             try
             {
-                Connection.Open();
-                SQLiteDataReader reader = command.ExecuteReader();
+                DatabaseController.Connection.Open();
+                SQLiteDataReader reader = DatabaseController.Command.ExecuteReader();
 
                 if (reader.HasRows)
                 {
@@ -99,9 +95,9 @@ namespace Turnierverwaltung.Controller
             }
             finally
             {
-                if (Connection.State.Equals(ConnectionState.Open))
+                if (DatabaseController.Connection.State.Equals(ConnectionState.Open))
                 {
-                    Connection.Close();
+                    DatabaseController.Connection.Close();
                 }
             }
             
